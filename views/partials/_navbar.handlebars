@@ -1,0 +1,38 @@
+ 
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/">Dental<span>Protect</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+	          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="/services" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="/staff" class="nav-link">Staff</a></li>
+	          <li class="nav-item"><a href="/posts?page=1" class="nav-link">Posts</a></li>
+	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+	           {{#if user}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Hi {{user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="/posts/addpost">Add new post</a>
+						<a class="dropdown-item" href="/staff/addstaff">Add new employer</a>
+						<a class="dropdown-item" href="/categories/addcategory">Add new category</a>
+						<div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/admin/changepassword">Change Password</a>
+                        <a class="dropdown-item" href="/admin/logout">Logout</a>
+                    </div>
+                </li>
+            {{/if}}
+					</ul>
+	      </div>
+	    </div>
+	  </nav>
+
+    <!-- END nav -->

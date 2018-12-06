@@ -1,0 +1,39 @@
+{{> _corusel}}
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row justify-content-center mb-5 pb-5">
+			<div class="col-md-7 text-center heading-section ftco-animate">
+				<h2 class="mb-3">Meet Our Experienced staff</h2>
+				<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+					paradisematic country, in which roasted parts of sentences</p>
+			</div>
+		</div>
+
+		<div class="row">
+			{{#each employers}}
+			<div class="col-lg-3 col-md-6 d-flex mb-sm-4 ftco-animate">
+				<div class="staff">
+					<div class="img mb-4" style="background-image: url(/images/staff/{{image}});"></div>
+					<div class="info text-center">
+						<h3>{{firstName}} {{lastName}}</h3>
+						<span class="position"> {{profession}} </span>
+						<div class="text">
+							<p> {{description}} </p>
+							{{#if ../user}}
+							<div style="display: flex; float:right;">
+								<a href="/staff/updatestaff/{{id}}" class="btn btn-success">Edit</a>
+								<form action="/staff/delete/{{id}}?_method=DELETE" method="POST" id="delete-form">
+									<input type="hidden" name="_method" value="DELETE">
+									<button class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+								</form>
+							</div>
+							{{/if}}
+						</div>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+
+</section>

@@ -1,0 +1,59 @@
+{{> _corusel}}
+<section class="ftco-section contact-section ftco-degree-bg">
+    <div class="container">
+        <div class="row block-9">
+            <div class="col-md-10 pr-md-5 m-auto card card-body">
+                <div class="row d-flex mb-3 contact-info">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="text-center">Edit post</h2>
+                    </div>
+                    <div class="w-100"></div>
+                </div>
+                <form action="/posts/editpost/{{post.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="form-group mb-4">
+                        <h5>Main photo</h5>
+                        <label for="image-default" class="image-button btn btn-primary" type="button">Upload
+                            main photo</label>
+                        <input type="file" id="image-default" name="image" style="display: none;">
+                        <label class="image-label"></label>
+                        <div class="preview-container" style="display: flex;">
+                            <img class="image-preview" src="" style="width: 250px; max-height: 250px;">
+                        </div>
+                    </div>
+                    <div class="form-group mb-4">
+                        <h5>Post title</h5>
+                        <input type="text" class="form-control" placeholder="Post title" name="title" value="{{post.title}}">
+                    </div>
+                    <div class="form-group mb-4">
+                        <h5>Choose a category</h5>
+                        <select name="category" class="custom-select" id="category">
+                            <option value="{{post.category}}">{{post.category}}</option>
+                            {{#each categories}}
+                            <option value="{{category}}">{{category}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group mb-4">
+                        <h5>Post content</h5>
+                        <textarea id="editor" name="content" class="form-control">{{post.body}}</textarea>
+                    </div>
+                    <div class="form-group mb-4">
+                        <h5>Slider photos</h5>
+                        <label for="slider-images" class="slider-images-button btn btn-success">Upload
+                            photos</label>
+                        <input type="file" id="slider-images" name="images" style="display: none;" multiple>
+                        <div class="preview-container" style="display: flex;">
+
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="float:right;">
+                        <input type="submit" value="Save" class="btn btn-primary py-2 px-3">
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
